@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2011Äê ÁùÔÂ 04ÈÕ ÐÇÆÚÁù, ÉÏÎç 9:44 -->
+<!-- MuClient version 4.72 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2011-06-04 09:44:00"
+  >
+  <variable name="dummy_id">leodm</variable>
+  <variable name="dummy_mode">1</variable>
+  <variable name="dummy_name">Àû°Â</variable>
+  <variable name="fali_ratio">1.7</variable>
+  <variable name="jiali">1</variable>
+  <variable name="neili_ratio">2.8</variable>
+  <variable name="nk_command">kill xiao tong;kill xiao tong</variable>
+  <variable name="nk_path">s;southwest;s;north;ne;east;n;south;s;north;e;west;w;southwest</variable>
+  <variable name="nk_restpath">fly changan;s;e;u;u;#wait 300;d;d;w;fly xiaoxitian</variable>
+  <variable name="nk_step">-1</variable>
+  <variable name="nk_target"></variable>
+  <variable name="study_index">1</variable>
+  <variable name="study_list">lian dodge</variable>
+  <variable name="study_place">yushu</variable>
+  <variable name="target_level">140</variable>
+  <variable name="target_max">1500</variable>
+  <variable name="task_lj_aftertaskaction">d;hp</variable>
+  <variable name="task_lj_beforetaskaction">jiali 0;hp;u</variable>
+  <variable name="task_lj_count">10</variable>
+  <variable name="task_lj_success">10</variable>
+  <variable name="task_yuan_count">0</variable>
+  <variable name="task_yuan_success">0</variable>
+  <variable name="temp">xue force from shou xing for 40;xue spells from shou xing for 40;xue zhenyuan-force from shou xing for 40;xue taiyi from shou xing for 40</variable>
+  <variable name="title"></variable>
+  <variable name="wait_time">120</variable>
+  <variable name="walk_block_wait">20</variable>
+  <variable name="xunhuan">1</variable>
+  <variable name="xx_act_up">lian unarmed</variable>
+  <variable name="xx_examine_up">du book</variable>
+  <variable name="xx_touch_up">xue force from yu shu</variable>
+</variables>
+</muclient>

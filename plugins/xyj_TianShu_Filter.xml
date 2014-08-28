@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE muclient>
+<!-- Saved on Friday, July 25, 2003, 11:37 AM -->
+<!-- MuClient version 3.42 -->
+<muclient>
+<plugin
+   name="XiYouJi_Decode_Filter"
+   author="Li Ying"
+   id="cff57fdf005bab600ea0027a"
+   language="lua"
+   purpose="Remove unnormal chars from TianShu decode output line"
+   date_written="2010-12-27 18:00:00"
+   requires="3.71"
+   version="1.0"
+   >
+<description trim="y">
+<![CDATA[
+Remove BS char from output line when I use decode command.
+]]>
+</description>
+
+</plugin>
+
+<!--  Triggers  -->
+
+<triggers>
+  <trigger
+   name="tianshu_decode_line"
+   enabled="y"
+   match="\x08+"
+   omit_from_output="y"
+   regexp="y"
+   script="OnDecodeLine"
+   sequence="20"
+  >
+  </trigger>
+</triggers>
+
+<aliases>
+    <alias
+    script="decode_filter_on"
+    match="dec filter on"
+    enabled="y"
+    sequence="100"
+    ignore_case="y"
+    ></alias>
+
+    <alias
+    script="decode_filter_off"
+    match="dec filter off"
+    enabled="y"
+    sequence="100"
+    ignore_case="y"
+    ></alias> 
+</aliases>
+
+<!--  Script  -->
+<script>
+<![CDATA[
+-- display one line
+
+require "tprint"
+
+--ÒÆ³ýBS×Ö·û
+function OnDecodeLine (name, line, wildcards, styles)
+	--tprint(styles)
+	for _, v in ipairs(styles) do
+		--local s = string.gsub( v.text, "%x08+", "" )
+		local s = v.text
+		if ( string.byte(s, 1) == 8 ) then
+			s = string.sub( s, v.length - 1, -1 )
+		end
+		ColourTell (RGBColourToName(v.textcolour),	RGBColourToName (v.backcolour), s)
+	end
+	Note("")
+end
+
+function decode_filter_on (name, line, wildcards, styles)
+	EnableTrigger("tianshu_decode_line", true)
+end
+
+function decode_filter_off (name, line, wildcards, styles)
+	EnableTrigger("tianshu_decode_line", false)
+end
+
+]]>
+</script>
+
+
+</muclient>

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2011Äê ÁùÔÂ 04ÈÕ ÐÇÆÚÁù, ÉÏÎç 9:43 -->
+<!-- MuClient version 4.72 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2011-06-04 09:43:32"
+  >
+  <alias
+   script="task.KillGuai"
+   match="sg"
+   enabled="y"
+   group="Task"
+   sequence="50"
+  >
+  </alias>
+  <alias
+   match="^cbx\s+(.*)$"
+   enabled="y"
+   expand_variables="y"
+   group="NK"
+   regexp="y"
+   sequence="100"
+  >
+  <send>cast baxian on %1</send>
+  </alias>
+  <alias
+   match="^cqk\s+(.*)$"
+   enabled="y"
+   expand_variables="y"
+   group="NK"
+   regexp="y"
+   sequence="100"
+  >
+  <send>cast qiankun on %1</send>
+  </alias>
+  <alias
+   match="^czh\s+(.*)$"
+   enabled="y"
+   group="NK"
+   regexp="y"
+   sequence="100"
+  >
+  <send>cast zhenhuo on %1</send>
+  </alias>
+  <alias
+   match="^gc(.*)$"
+   enabled="y"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get all from corpse%1</send>
+  </alias>
+  <alias
+   match="^lc(.*)$"
+   enabled="y"
+   regexp="y"
+   sequence="100"
+  >
+  <send>l corpse%1</send>
+  </alias>
+  <alias
+   match="ar"
+   enabled="y"
+   group="Task"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask yuan about reward
+skills</send>
+  </alias>
+  <alias
+   match="biou"
+   enabled="y"
+   group="xyj"
+   sequence="100"
+  >
+  <send>ask shou xing about ±ÌÅº</send>
+  </alias>
+  <alias
+   match="ca2cx"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 7w (nw) 2w (sw) w (give 2 silver to ma dao) (nw) 3w (unset brief)
+</send>
+  </alias>
+  <alias
+   match="ca2fc"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 13s 10w (nw) (nu) n (nu) (ne) (ne) (nu) (nu) n (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2glz"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 13s 6w (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2kf"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 13e (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2lg"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 16s 3e (dive) (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2lj"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) (fly sky) 4e 5n 2w 2s 2e n (hp) (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2pt"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 16s (swim) (mount maolu) (mount horse) 2n (nu) (nu) (open door) n (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2wz"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 7w (nw) 2w (sw) w (give 2 silver to ma dao) (nw) w (nu) n (nu) (nw) n 3(nu) n (nu) (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2xa"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 6s e (nu) (xajh) n (nu) (nd) 2n (unset brief)</send>
+  </alias>
+  <alias
+   match="ca2yg"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 7w (nw) (ne) 3(nw) w (wu) 2(su) 2(wu) (nu) (unset brief)</send>
+  </alias>
+  <alias
+   match="cbxg"
+   enabled="y"
+   group="Task"
+   send_to="12"
+   sequence="100"
+  >
+  <send>task.CastOnGuai("cast baxian on")</send>
+  </alias>
+  <alias
+   match="chuiqi"
+   enabled="y"
+   group="Dummy"
+   send_to="10"
+   sequence="100"
+  >
+  <send>#15 (exert recover leodm)
+hp</send>
+  </alias>
+  <alias
+   match="chuishen"
+   enabled="y"
+   group="Dummy"
+   send_to="10"
+   sequence="100"
+  >
+  <send>#15 (exert refresh leodm)
+hp</send>
+  </alias>
+  <alias
+   match="con"
+   enabled="y"
+   group="Walk"
+   send_to="12"
+   sequence="100"
+  >
+  <send>walk.Continue()</send>
+  </alias>
+  <alias
+   match="cqkg"
+   enabled="y"
+   group="Task"
+   send_to="12"
+   sequence="100"
+  >
+  <send>task.CastOnGuai("cast qiankun on")</send>
+  </alias>
+  <alias
+   match="cx2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>3e (se) e (ne) 2e (se) 7e
+</send>
+  </alias>
+  <alias
+   script="dummy.Start"
+   match="dummystart"
+   enabled="y"
+   group="Dummy"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   script="dummy.Stop"
+   match="dummystop"
+   enabled="y"
+   group="Dummy"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   match="dupoem"
+   enabled="y"
+   group="Study"
+   sequence="100"
+  >
+  <send>du poem</send>
+  </alias>
+  <alias
+   match="duxueshu"
+   enabled="y"
+   group="Study"
+   sequence="100"
+  >
+  <send>du xue shu</send>
+  </alias>
+  <alias
+   match="eatdan"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>get 1 dan from kuang
+eat dan</send>
+  </alias>
+  <alias
+   match="eatyao"
+   enabled="y"
+   group="Char_Info"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get 3 yao from kuang
+#3 (eat yao)</send>
+  </alias>
+  <alias
+   match="ef"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>exert refresh</send>
+  </alias>
+  <alias
+   match="eh"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>exert heal</send>
+  </alias>
+  <alias
+   match="er"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>exert recover</send>
+  </alias>
+  <alias
+   match="fadai"
+   enabled="y"
+   group="Char_Info"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("fadai", true)
+EnableTrigger("monitor_mobs", false)
+EnableTrigger ( "warn_mobs", false )</send>
+  </alias>
+  <alias
+   match="fc2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) s (sd) (sd) (sw) (sw) (sd) s (sd) (se) 10e 13n (unset brief)</send>
+  </alias>
+  <alias
+   match="fqall"
+   enabled="y"
+   group="Task"
+   send_to="10"
+   sequence="100"
+  >
+  <send>fangqi dodge
+fangqi parry
+fangqi sword</send>
+  </alias>
+  <alias
+   match="fuwan"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>get 1 wan from kuang
+fu wan</send>
+  </alias>
+  <alias
+   match="ga"
+   enabled="y"
+   sequence="100"
+  >
+  <send>get all</send>
+  </alias>
+  <alias
+   match="glz2ca"
+   enabled="y"
+   group="Map"
+   send_to="10"
+   sequence="100"
+  >
+  <send>set brief;#6 e;#13 n;unset brief</send>
+  </alias>
+  <alias
+   match="hfstop"
+   enabled="y"
+   group="Char_Info"
+   send_to="12"
+   sequence="100"
+  >
+  <send>me.state.StopRecover()</send>
+  </alias>
+  <alias
+   match="home"
+   enabled="y"
+   group="Dummy"
+   send_to="10"
+   sequence="100"
+  >
+  <send>tell lileo fly changan
+fly changan</send>
+  </alias>
+  <alias
+   match="huifu"
+   enabled="y"
+   group="Char_Info"
+   send_to="12"
+   sequence="100"
+  >
+  <send>me.state.Recover()</send>
+  </alias>
+  <alias
+   match="huozao"
+   enabled="y"
+   group="xyj"
+   sequence="100"
+  >
+  <send>ask fu xing about »ðÔæ</send>
+  </alias>
+  <alias
+   match="jiaoli"
+   enabled="y"
+   group="xyj"
+   sequence="100"
+  >
+  <send>ask lu xing about ½»Àæ</send>
+  </alias>
+  <alias
+   match="kf2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 13w (unset brief)</send>
+  </alias>
+  <alias
+   script="task.KillGuai2"
+   match="kg"
+   enabled="y"
+   group="Task"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   match="lg2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) w (sw) 2w (up) (mount maolu) (mount horse) 3w 16n (unset brief)</send>
+  </alias>
+  <alias
+   match="lj2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) s 2w 2n 2e 5s 4w (fly changan) (unset brief)</send>
+  </alias>
+  <alias
+   match="maiyao"
+   enabled="y"
+   group="Task"
+   send_to="10"
+   sequence="100"
+  >
+  <send>buy dan from doctor
+buy dan from doctor
+buy wan from doctor</send>
+  </alias>
+  <alias
+   match="mi"
+   enabled="y"
+   group="Char_Info"
+   sequence="100"
+  >
+  <send>i</send>
+  </alias>
+  <alias
+   match="nk"
+   enabled="y"
+   group="NK"
+   send_to="12"
+   sequence="100"
+  >
+  <send>nk.Start()</send>
+  </alias>
+  <alias
+   match="nkstop"
+   enabled="y"
+   group="NK"
+   send_to="12"
+   sequence="100"
+  >
+  <send>nk.Stop()</send>
+  </alias>
+  <alias
+   match="pause"
+   enabled="y"
+   group="Walk"
+   send_to="12"
+   sequence="100"
+  >
+  <send>walk.Pause()</send>
+  </alias>
+  <alias
+   match="pd"
+   enabled="y"
+   group="NK"
+   sequence="100"
+  >
+  <send>perform duo</send>
+  </alias>
+  <alias
+   match="pqy"
+   enabled="y"
+   group="NK"
+   sequence="100"
+  >
+  <send>perform qianyan</send>
+  </alias>
+  <alias
+   match="pt2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) s (sd) (sd) 2s (swim) (mount maolu) (mount horse) 16n (unset brief)</send>
+  </alias>
+  <alias
+   match="pushjj"
+   enabled="y"
+   group="Map"
+   send_to="10"
+   sequence="100"
+  >
+  <send>#9 (push jingji);er</send>
+  </alias>
+  <alias
+   match="savemoney"
+   enabled="y"
+   group="Char_Info"
+   send_to="12"
+   sequence="100"
+  >
+  <send>me.items.SaveMoney ()</send>
+  </alias>
+  <alias
+   match="search"
+   enabled="y"
+   group="Task"
+   send_to="12"
+   sequence="100"
+  >
+  <send>task.StartLookup()</send>
+  </alias>
+  <alias
+   match="stop"
+   enabled="y"
+   group="Walk"
+   send_to="12"
+   sequence="100"
+  >
+  <send>walk.Stop()</send>
+  </alias>
+  <alias
+   script="task.TieGuai"
+   match="tg"
+   enabled="y"
+   group="Task"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   match="wj"
+   enabled="y"
+   group="Task"
+   send_to="12"
+   sequence="100"
+  >
+  <send>task.lijing.Ask(true)</send>
+  </alias>
+  <alias
+   script="task.yuan.Ask"
+   match="wy"
+   enabled="y"
+   group="Task"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   match="wz2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) (sd) s 3(sd) s (se) (sd) s (sd) e (se) e (ne) 2e (se) 7e (set brief)</send>
+  </alias>
+  <alias
+   match="xa2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) 2s (su) (sd) s (out) (sd) w 6n (unset brief)</send>
+  </alias>
+  <alias
+   match="xx"
+   enabled="y"
+   group="Study"
+   send_to="12"
+   sequence="100"
+  >
+  <send>study.CallFromOuter()</send>
+  </alias>
+  <alias
+   match="xxstop"
+   enabled="y"
+   group="Study"
+   send_to="12"
+   sequence="100"
+  >
+  <send>study.Abort()</send>
+  </alias>
+  <alias
+   match="yg2ca"
+   enabled="y"
+   group="Map"
+   send_to="11"
+   sequence="100"
+  >
+  <send>(set brief) (sd) 2(ed) 2(nd) (ed) e 3(se) (sw) (se) 7e (unset brief)</send>
+  </alias>
+  <alias
+   match="yt"
+   enabled="y"
+   sequence="100"
+  >
+  <send>yao tree</send>
+  </alias>
+</aliases>
+</muclient>

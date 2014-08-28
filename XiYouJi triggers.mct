@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2011Äê ÁùÔÂ 04ÈÕ ÐÇÆÚÁù, ÉÏÎç 9:43 -->
+<!-- MuClient version 4.72 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2011-06-04 09:43:19"
+  >
+  <trigger
+   group="Cmds"
+   match="^&gt;"
+   name="cmd_outputend"
+   regexp="y"
+   script="command.OnOutputEnd"
+   sequence="20"
+  >
+  </trigger>
+  <trigger
+   group="Cmds"
+   match="temp_match"
+   name="cmd_waittrigger"
+   regexp="y"
+   script="command.OnTriggered"
+   sequence="20"
+  >
+  </trigger>
+  <trigger
+   group="Cmds"
+   match="temp_match"
+   name="cmd_success"
+   regexp="y"
+   script="command.OnCmdSuccess"
+   sequence="20"
+  >
+  </trigger>
+  <trigger
+   group="Monitor"
+   match="^(?P&lt;killer_name&gt;\S+)¶¢×ÅÄã£¬²öµÃÖ±Á÷¿ÚË®£ººÙºÙ£®£®£®$"
+   name="monitor_mobs"
+   regexp="y"
+   script="monitor.FocusedByMobs"
+   sequence="50"
+  >
+  </trigger>
+  <trigger
+   group="Monitor"
+   match="^¿´ÆðÀ´ÏëÉ±ËÀÄã£¡$"
+   name="warn_mobs"
+   regexp="y"
+   script="monitor.SomeWantKillMe"
+   sequence="50"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Dummy"
+   keep_evaluating="y"
+   match="^Àû°Â\(leodm\)¸æËßÄã£º(?P&lt;message&gt;.*)$"
+   name="dummy_receive"
+   regexp="y"
+   script="dummy.OnReceive"
+   sequence="50"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( Äã¿´ÆðÀ´ÒÑ¾­Á¦²»´ÓÐÄÁË¡£ )"
+   sequence="100"
+  >
+  <send>exert recover
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( ÄãÁ½ÑÛ·¢Ö±£¬¿Ú½ÇÁ÷ÏÑ£¬ÉñÖÇ¿ªÊ¼»ìÂÒ¡£ )"
+   sequence="100"
+  >
+  <send>exert refresh
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( ÄãËÆºõÊ®·ÖÆ£±¹£¬¿´À´ÐèÒªºÃºÃÐÝÏ¢ÁË¡£ )"
+   sequence="100"
+  >
+  <send>exert recover
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( ÄãÒ¡Í·»ÎÄÔ¡¢ÍáÍáÐ±Ð±µØÕ¾¶¼Õ¾²»ÎÈ£¬ÑÛ¿´¾ÍÒªµ¹ÔÚµØÉÏ¡£ )"
+   sequence="100"
+  >
+  <send>exert recover
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( ÄãÒÑ¾­ÏÝÈë°ë»èÃÔ×´Ì¬£¬ËæÊ±¶¼¿ÉÄÜË¤µ¹ÔÎÈ¥¡£ )"
+   sequence="100"
+  >
+  <send>exert recover
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="( ÄãÒÑ¾­Ò»¸±Í·ÖØ½ÅÇáµÄÄ£Ñù£¬ÕýÔÚÃãÁ¦Ö§³Å×Å²»µ¹ÏÂÈ¥¡£ )"
+   sequence="100"
+  >
+  <send>exert recover
+hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Dummy"
+   match="^\(\s+Àû°Â"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>chuiqi</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\(\s+Äã"
+   regexp="y"
+   sequence="100"
+  >
+  <send>hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\s+(.*)\(Cake\spiece\)$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>eat cake piece</send>
+  </trigger>
+  <trigger
+   group="Walk"
+   match="^\s+(?P&lt;desp&gt;\S+)\s+Â¹×ì±ª\(Luzui bao\)$"
+   name="object_tofind"
+   regexp="y"
+   script="walk.OnFoundObject"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\sµÀÐÐ¾³½ç£º(?P&lt;dxjj&gt;\S{8})(¡¡)+ÎäÑ§¾³½ç£º(?P&lt;wxjj&gt;\S{8})$"
+   regexp="y"
+   script="me.state.ScoreLine1"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\s·¨Á¦ÐÞÎª£º(?P&lt;flxw&gt;\S{8})(¡¡)+ÄÚÁ¦ÐÞÎª£º(?P&lt;nlxw&gt;\S+)$"
+   regexp="y"
+   script="me.state.ScoreLine2"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\s¾«Éñ£º\s+(?P&lt;mp&gt;\d+)/\s+(?P&lt;mpmax&gt;\d+)\s\(\s*(?P&lt;mprate&gt;\d+)\%\)\s+·¨Á¦£º\s+(?P&lt;fali&gt;\d+)\s/\s+(?P&lt;falimax&gt;\d+)\s\(\s*(\d+)%\).*$"
+   regexp="y"
+   script="me.state.HPLine2"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\sÆøÑª£º\s+(?P&lt;hp&gt;\d+)/\s+(?P&lt;hpmax&gt;\d+)\s\(\s*(?P&lt;hprate&gt;\d+)%\)\s+ÄÚÁ¦£º\s+(?P&lt;neili&gt;\d+)\s/\s+(?P&lt;neilimax&gt;\d+)\s\(\s*(\d+)%\).*$"
+   regexp="y"
+   script="me.state.HPLine1"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\sÇ±ÄÜ£º\s+(?P&lt;qn&gt;\d+)\s+É±Æø£º\s*(?P&lt;shaqi&gt;\d+)$"
+   regexp="y"
+   script="me.state.HPLine5"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\sÊ³Îï£º\s+(?P&lt;food&gt;\d+)/\s+(?P&lt;foodmax&gt;\d+)\s+ÎäÑ§£º\s*(?P&lt;wuxue&gt;\d+)$"
+   regexp="y"
+   script="me.state.HPLine3"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^\sÒûË®£º\s+(?P&lt;drink&gt;\d+)/\s+(?P&lt;drinkmax&gt;\d+)\s+µÀÐÐ£º\s*(?P&lt;daoxing&gt;\S+)$"
+   regexp="y"
+   script="me.state.HPLine4"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="Monitor"
+   match="^º¹ÑªÂí×ßÁË¹ýÀ´¡£$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>mount horse</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË£®£®£®$"
+   sequence="100"
+  >
+  <send>l</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Dummy"
+   match="^Àû°Â½ÅÏÂÒ»¸ö²»ÎÈ"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get leodm</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^ÄãµÃµ½ÁË(?P&lt;dx&gt;\S+)µÀÐÐ¡£$"
+   regexp="y"
+   script="me.state.GetDx"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   keep_evaluating="y"
+   match="^ÄãÄ¿Ç°ÕÆÎÕÁË(?P&lt;skills_count&gt;\d+)Ïî¼¼ÄÜ£º$"
+   regexp="y"
+   script="me.skills.StartGetSkills"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   keep_evaluating="y"
+   match="^ÄãÉíÉÏ´ø×ÅÏÂÁÐÕâÐ©¶«Î÷\(¸ºÖØ\s+(?P&lt;fuzhong&gt;\d+)%\)£º$"
+   regexp="y"
+   script="me.items.StartGetItems"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Login"
+   match="^ÄúÒª½«ÁíÒ»¸öÁ¬ÏßÖÐµÄÏàÍ¬ÈËÎï¸Ï³öÈ¥£¬È¡¶ø´úÖ®Âð£¿"
+   regexp="y"
+   sequence="100"
+  >
+  <send>y
+</send>
+  </trigger>
+  <trigger
+   group="Monitor"
+   match="^ÕâÀï²»ÊÇÁ·¹¦µÄµØ·½¡£$"
+   name="wrong_place"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>xxstop
+xxstop</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Char_Info"
+   match="^ÕâÎÞµÐÈý°å¸«Ò»ÆøºÇ³É£¬Äã±»¹¥ÁË¸ö´ëÊÖ²»¼°£¬ÉËÊÆÉõÎª¿ÉÅÂ£¡$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Login"
+   match="^ÖØÐÂÁ¬ÏßÍê±Ï¡£$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>l
+</send>
+  </trigger>
+</triggers>
+</muclient>
